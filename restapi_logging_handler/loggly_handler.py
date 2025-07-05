@@ -177,7 +177,7 @@ class LogglyHandler(RestApiHandler):
                         url,
                         data=payload,
                         headers={'content-type': 'application/json'},
-                        background_callback=callback
+                        hooks={'response': callback},
                     )
 
     def emit(self, record):
